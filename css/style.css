@@ -1,0 +1,540 @@
+/*
+General settings 
+*/
+*{
+    padding:0 ; 
+    margin :0 ; 
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Varela Round', sans-serif;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+}
+h1 ,h2,h3,h4,h5,h6{
+    font-family: monospace;
+}
+.hover-opacity{
+    transition: opacity .4s;
+}
+.hover-opacity:hover{
+    opacity: 0.8;
+}
+a{
+    text-decoration: none;
+}
+.clear{
+    clear: both;
+}
+.pd-y{
+    padding: 160px 0 ;
+}
+.mg-y{
+    margin:  160px 0 ;
+}
+.mg{
+    margin: 0 5px;
+}
+.ltr-hover ,.tb-hover{
+    position: relative ; 
+
+}
+.ltr-hover:after , .tb-hover:after {
+    content:'' ; 
+    position: absolute;
+    top:0  ; 
+    left:0 ; 
+    z-index: -1;
+    background: rgba(0,0 ,0, 0.8);
+    
+}
+.ltr-hover:after{
+    height: 100%;
+    width: 0%;
+    transition: width .5s;
+}
+.tb-hover:after{
+    width: 100%;
+    height: 0%;
+    transition: height .5s ;
+}
+.tb-hover:hover:after{
+    height: 100%;
+}
+.tb-hover:hover .price-confirme{
+    background-color:  rgba(0,0 ,0, 0.8);
+}
+.tb-hover:hover .basic-paln{
+    color: #6195ff;    
+}
+.tb-hover:hover .price-item-dol{
+    color: #fff;
+}
+.ltr-hover:hover:after{
+    width:100% ; 
+}
+
+/*
+Header Styling 
+*/
+.header{
+   
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+.header .header-content {
+   /** overflow: hidden;*/
+}
+.header .logo{
+    display: inline-block;
+    width: 40%;
+    float: left;
+}
+.header .logo img{
+    width: 20%;
+    margin-top: 13px;
+}
+.header .nav{
+    display: inline-block;
+    float: right;
+    list-style: none;
+    text-align: right;
+    width: 60%;
+}
+.header .nav > li {
+    display: inline-block;
+    
+}
+.header .nav > li > a{
+    text-decoration: none;
+    display: block;
+    color: #fff;
+    font-size: 13px;
+    padding: 30px 15px;
+} 
+.header .nav > li > a:after ,.header .nav > li > a.active:after
+    
+ {
+    content:'' ; 
+    display: block;
+    width:100% ; 
+    height: 2px;
+    background:#6195ff ; 
+    margin-top:3px ;
+}
+.header .nav > li > a:after{
+    width: 0;
+    transition: width .4s;
+}
+.header .nav > li > a:hover:after{
+    width: 100%;
+}
+.dropdown{
+    position: relative;
+}
+.dropdown .dropdown-menu {
+    position: absolute;
+    width: 130px;
+    display: block;
+    background-color: #6195ff ; 
+    padding:10px ; 
+    color:#fff ; 
+    text-align: center ;
+    left: -50%;
+    top: 68%;
+    list-style: none;
+    visibility: hidden;
+    opacity: 0;
+    transition : opacity .5s ;
+    
+}
+.dropdown .dropdown-menu a{
+    color: #fff;
+}
+.dropdown:hover .dropdown-menu{
+    visibility: visible;
+    opacity: 1;
+}
+/* Home Style*/
+.home{
+    background-image: url(../images/background/background1.webp);
+    height: 100vh;
+    background-size:cover ;
+    position: relative;
+}
+.overlay{
+    width: 100%;
+    height:100% ; 
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.home-content{
+    
+    position: absolute;
+    text-align: center ;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+}
+.home .title{
+    text-transform: capitalize;
+    font-size: 3.5em;
+    
+}
+.home .home-desc {
+    padding: 15px;
+    line-height: 25px;
+    letter-spacing: 1.5px;
+}
+.home .btn {
+    width: 160px ;
+    padding: 15px 0 ;
+    border:0 ; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+.home .btn-start {
+    background: #fff;
+    margin-right:10px  ;
+}
+.home .btn-learn {
+    background: #6195ff;
+    color: #fff;
+}
+/*general setting Design*/
+.section-header{
+    text-align: center ;
+    padding: 15px;
+}
+.section-header-title{
+    font-size:35px ; 
+    text-transform:capitalize ;
+}
+
+.section-header span.line{
+    display: block;
+    width: 65px;
+    height: 5px;
+    background-color:#6195ff ; 
+    margin: 6px auto 40px auto;
+    
+
+}
+/*
+*About section 
+*/
+.about-content{
+    overflow: hidden;
+}
+.about-items{
+    float: left;
+    border: 1px solid #e8e8e8;
+    width: 30%;
+    padding: 20px 10px;
+    text-align: center ;
+}
+.about-items i {
+    color: #6195ff;
+    margin:10px 0 ; 
+}
+.about-items .title{
+    margin: 10px  0;
+    font-size: 22px;
+    text-transform: capitalize;
+    transition: color 0.5s;
+}
+.ltr-hover:hover  .title{
+    color: #fff;
+} 
+.about-items .item-desc{
+    line-height: 1.6;
+    margin: 10px 0;
+    font-size: 14px;
+    opacity: .8;
+}
+.about-items .item-link{
+text-transform: capitalize;
+margin: 10px 0;
+color: #6195ff;
+}
+/* 
+*Working in portfelio section 
+*/
+.portfelio-content{
+    overflow:hidden ; 
+
+}
+.portfelio-items{
+    float:left ; 
+    width:30% ; 
+    margin-bottom:10px ;
+    padding: 20px;
+    position: relative;
+
+
+}
+.layer-content{
+    position:absolute ; 
+    top:0 ; 
+    left:0 ; 
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    width:100% ; 
+    background-color:rgba(0, 0,0 ,0.5 ) ;
+    transition: opacity .5s;
+    
+}
+.portfelio-items:hover .layer-content{
+    visibility: visible;
+    opacity: 1;
+}
+.layer-info{
+    position: absolute;
+    top:50% ; 
+    left:50%  ; 
+    transform: translate(-50%,-50%);
+    text-align: center ;
+    width: 80%;
+}
+.portfelio-items img{
+    width:100%;
+    
+}
+
+.layer-info .category{
+    margin-bottom:10px;
+    color: #6195ff;
+    font-weight: 525;
+    position: relative;
+    top:10px ; 
+    opacity:0  ;
+    visibility: hidden;
+    transition:opacity .5s , top .5s ; 
+    transition-delay:.2s ; 
+}
+.layer-info .layer-title{
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+    position: relative;
+    top:10px ; 
+    visibility: hidden;
+    opacity:0  ;
+    transition:opacity .5s , top .5s ; 
+    transition-delay:.3s ; 
+}
+.layer-info a i{
+    background-color: #6195ff;
+    width: 40px;
+    height: 40px;
+    visibility: hidden;
+    color: #fff;
+    position: relative;
+    top:10px ; 
+    line-height: 40px;
+    opacity:0;
+    transition:opacity .5s , top .5s ; 
+    transition-delay:.35s ; 
+}
+.layer-content:hover .layer-info .category ,.layer-content:hover .layer-info .layer-title,
+.layer-content:hover .layer-info a i{
+    opacity: 1;
+    visibility: visible;
+    top:0 ; 
+    
+}
+/*
+*services section 
+*/ 
+
+.service-content  {
+    overflow:hidden ; 
+}
+.service-item{
+    float: left;
+    width:30% ; 
+    border : 1px solid #e8e8e8 ; 
+    padding: 20px 5px 15px 70px;
+    position: relative;
+    margin-bottom:15px ;
+}
+.service-item .icon {
+    position :absolute ; 
+    left:10px  ; 
+    color: #6195ff;
+}
+.service-item-title{
+    margin-bottom: 15px;
+    font-weight: 700px;
+    transition: color .5s;
+}
+.service-item-desc{
+    font-size:14px ;
+    line-height: 1.8;
+    margin-bottom:15px;  
+    color:rgba(0, 0, 0, 0.8)
+}
+.service-item:hover .service-item-title{
+    color: #fff;
+}
+/*
+*   Work section Let's Gooo 
+*/
+.work{
+    background:#f9f9f9 ;
+}
+.work-item{
+    width:50% ; 
+    float: left;
+    display: inline-block;
+}
+.work-item .section-header{
+    text-align: left;
+}
+.work-item .section-header .line{
+    margin : 0 0 40px 0 ; 
+}
+.work-item-desc{
+    font-size: 16px;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+.work-list{
+    list-style: none;
+}
+.work-list li i {
+    color: #6195ff;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #e8e8e8;
+    border-radius: 50%;
+    padding: 5px;
+}
+.work-list li{
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+.work-item .img-content {
+    width: 90%;
+}
+.work-item .img-content img{
+    width: 100%;
+}
+.work-item .boullet{
+    list-style: none;
+    text-align: center;
+}
+.work-item .boullet li {
+    width: 10px;
+    height: 10px;
+    margin: 3px;
+    background: #e8e8e8;
+    border-radius: 50%;
+    display: inline-block;
+}
+.work-item .boullet li.active{
+    background: #6195ff;
+}
+.work-item .boullet li:hover{
+    background: #6195ff;
+}
+/*
+*Number Section 
+*/
+.number{
+    background-image:url('/images/background/background2.webp') ;
+    background-attachment: fixed;
+    position: relative ;
+    height: 250px;
+
+}
+.number-info{
+    overflow: hidden;
+}
+.number-item{
+    display: inline-block ;
+    width: 24%;
+    text-align: center;
+    padding: 80px 0 ;
+}
+.number-item .icon {
+    color: #6195ff;
+    margin-bottom: 15px;
+}
+.number-item-num {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.number-item-desc{
+    text-transform: capitalize;
+    color: #b2b9c0;
+    font-size:12px  ;
+}
+.price{
+
+}
+.price-info{
+    overflow: hidden;
+}
+.price-item{
+    display: inline-block ;
+    width: 30%;
+    text-align: center;
+    border:1px solid #e8e8e8;
+    padding: 20px;
+}
+.price-item .basic-paln{
+    text-transform: uppercase;
+    color: #e8e8e8;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+.price-item-dol{
+    width: 100px;
+    height: 100px;
+    border: 2px solid #6195ff;
+    border-radius: 50%;
+    padding:15px;
+    margin: 15px auto;
+    transition: color .5s;
+
+}
+.price-item-dol h3{
+    font-size: 35px;
+    font-weight: bold;
+   
+}
+.price-item-perm{
+    text-transform: uppercase;
+    font-size: 13px;
+}
+.price-item-desc{
+    list-style: none;
+    margin:15px 0 ;
+}
+.price-item-desc li {
+    color: #cbcbcb;
+    margin: 10px;
+}
+.price-item .price-confirme{
+    height: 30px ;
+    padding: 5px 0;
+    width:120px ; 
+    background: #fff;
+    margin:15px auto ; 
+    color: #6195ff;
+    border: 2px solid #6195ff;
+    font-size: 12px;
+    transition: background .5s ;
+}
